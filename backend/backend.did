@@ -1,0 +1,13 @@
+type Time = int;
+type ShoppingItem = 
+ record {
+   completed: opt Time;
+   id: nat;
+   "text": text;
+ };
+service : {
+  addItem: (text) -> (nat);
+  deleteItem: (nat) -> ();
+  getItems: () -> (vec ShoppingItem) query;
+  markCompleted: (nat) -> ();
+}
